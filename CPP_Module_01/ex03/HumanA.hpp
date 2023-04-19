@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: red <red@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:55:28 by maparigi          #+#    #+#             */
-/*   Updated: 2023/04/17 17:00:41 by maparigi         ###   ########.fr       */
+/*   Updated: 2023/04/19 18:35:22 by red              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,11 @@ public:
 
 private:
 
-	Weapon&		_weapon;
 	std::string	_name;
+	Weapon&		_weapon;
 
 };
+
+void	attack();
 
 #endif

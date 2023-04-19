@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   HumanB.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
+/*   By: red <red@student.42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/17 16:10:53 by maparigi          #+#    #+#             */
-/*   Updated: 2023/04/17 17:18:46 by maparigi         ###   ########.fr       */
+/*   Updated: 2023/04/19 18:23:06 by red              ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ public:
 	~HumanB();
 
 	void	attack();
+	void	setWeapon( Weapon& Weap );
 
 private:
 
@@ -29,5 +30,7 @@ private:
 	std::string	_name;
 
 };
+
+void	attack();
 
 #endif

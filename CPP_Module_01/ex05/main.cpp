@@ -1,39 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Harl.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/22 17:09:56 by maparigi          #+#    #+#             */
-/*   Updated: 2023/04/23 01:29:50 by maparigi         ###   ########.fr       */
+/*   Created: 2022/07/20 11:40:04 by ael-khni          #+#    #+#             */
+/*   Updated: 2023/04/23 01:53:33 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef HARL_HPP
-# define HARL_HPP
+#include "Harl.hpp"
 
-# include <iostream>
-# include <iomanip>
+int main( void ) {
 
-class Harl
-{
-public:
+    std::string input;
+    Harl        harl;
 
-	Harl();
-	~Harl();
+    do
+    {
+        std::cout << "Enter a level: ";
+        std::getline(std::cin, input);
+		if (!std::cin.good() || std::cin.eof())
+			return EXIT_FAILURE;
+        harl.complain(input);
+    } while (input != "exit");
 
-	void	complain( std::string level );
-
-private:
-
-	void	info();
-	void	error();
-	void	debug();
-	void	warning();
-
-};
-
-typedef	void( Harl::*t_fun )( void );
-
-#endif
+    return EXIT_SUCCESS;
+}

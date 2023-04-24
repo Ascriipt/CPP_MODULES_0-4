@@ -1,32 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   replace.cpp                                        :+:      :+:    :+:   */
+/*   Replace.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 15:35:31 by maparigi          #+#    #+#             */
-/*   Updated: 2023/04/24 16:11:57 by maparigi         ###   ########.fr       */
+/*   Updated: 2023/04/24 18:25:32 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "replace.hpp"
+#include "Replace.hpp"
 
-replace::replace( std::string infile ) : _infile(infile), _outfile(infile + ".replace") {
+Replace::Replace( std::string infile ) : _infile(infile), _outfile(infile + ".replace") {
 }
 
-replace::~replace() {
+Replace::~Replace() {
 }
 
-const std::string	replace::getinfile( void ) const {
+const std::string	Replace::getinfile( void ) const {
 	return (this->_infile);
 }
 
-const std::string	replace::getoutfile( void ) const {
+const std::string	Replace::getoutfile( void ) const {
 	return (this->_outfile);
 }
 
-void	replace::run_replace( std::string tofind, std::string toswap ) {
+void	Replace::run_replace( std::string tofind, std::string toswap ) {
 	std::ifstream	myfile(this->_infile.c_str());
 	std::string		content;
 	size_t			posx;
@@ -35,7 +35,7 @@ void	replace::run_replace( std::string tofind, std::string toswap ) {
 	{
 		if ( std::getline(myfile, content, '\0') )
 		{
-			std::ofstream	newfile(this->_outfile.c_str());
+			std::ofstream	neufile(this->_outfile.c_str());
 			posx = content.find(tofind);
 			while ( posx != std::string::npos )
 			{
@@ -43,14 +43,11 @@ void	replace::run_replace( std::string tofind, std::string toswap ) {
 				content.insert(posx, toswap);
 				posx = content.find(tofind);
 			}
-			newfile << content;
-			newfile.close();
+			neufile << content;
+			neufile.close();
 		}
 		myfile.close();
 	}
 	else
-	{
 		std::cerr << "unable to open : " << this->_infile << std::endl;
-		std::exit(1);
-	}
 }

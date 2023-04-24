@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   replace.hpp                                        :+:      :+:    :+:   */
+/*   Replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 14:52:59 by maparigi          #+#    #+#             */
-/*   Updated: 2023/04/24 16:12:11 by maparigi         ###   ########.fr       */
+/*   Updated: 2023/04/24 18:18:02 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,12 +19,12 @@
 #include <fstream>
 #include <string>
 
-class replace
+class Replace
 {
 public:
 
-	replace( std::string infile );
-	~replace();
+	Replace( std::string infile );
+	~Replace();
 
 	void	run_replace( std::string tofind, std::string toswap );
 

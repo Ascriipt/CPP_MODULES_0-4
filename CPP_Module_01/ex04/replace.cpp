@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/21 15:35:31 by maparigi          #+#    #+#             */
-/*   Updated: 2023/04/21 19:15:34 by maparigi         ###   ########.fr       */
+/*   Updated: 2023/04/24 16:11:57 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ const std::string	replace::getoutfile( void ) const {
 }
 
 void	replace::run_replace( std::string tofind, std::string toswap ) {
-	std::ifstream	myfile(this->_infile);
+	std::ifstream	myfile(this->_infile.c_str());
 	std::string		content;
 	size_t			posx;
 
@@ -35,7 +35,7 @@ void	replace::run_replace( std::string tofind, std::string toswap ) {
 	{
 		if ( std::getline(myfile, content, '\0') )
 		{
-			std::ofstream	newfile(this->_outfile);
+			std::ofstream	newfile(this->_outfile.c_str());
 			posx = content.find(tofind);
 			while ( posx != std::string::npos )
 			{
@@ -51,6 +51,6 @@ void	replace::run_replace( std::string tofind, std::string toswap ) {
 	else
 	{
 		std::cerr << "unable to open : " << this->_infile << std::endl;
-		exit(EXIT_FAILURE);
+		std::exit(1);
 	}
 }

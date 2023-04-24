@@ -6,7 +6,7 @@
 #    By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/07 18:52:45 by maparigi          #+#    #+#              #
-#    Updated: 2023/04/24 16:13:06 by maparigi         ###   ########.fr        #
+#    Updated: 2023/04/24 17:04:59 by maparigi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,13 +24,12 @@ White=\033[0;37m
 Blink=\033[5m
 #---------------------------#
 
-NAME = BraiiiiiiinnnzzzZ
+NAME = HarlFilter
 
 CC = c++
 
 SRC =	main.cpp \
-		Zombie.cpp \
-		zombieHorde.cpp \
+		Harl.cpp \
 
 OBJ = ${SRC:.cpp=.o}
 DEPS = ${SRC:.cpp=.d}

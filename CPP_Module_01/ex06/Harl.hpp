@@ -1,41 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   replace.hpp                                        :+:      :+:    :+:   */
+/*   Harl.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 14:52:59 by maparigi          #+#    #+#             */
-/*   Updated: 2023/04/24 16:12:11 by maparigi         ###   ########.fr       */
+/*   Created: 2023/04/22 17:09:56 by maparigi          #+#    #+#             */
+/*   Updated: 2023/04/23 01:29:50 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef REPLACE_HPP
-# define REPLACE_HPP
+#ifndef HARL_HPP
+# define HARL_HPP
 
-#include <iostream>
-#include <cstdlib>
-#include <iomanip>
-#include <fstream>
-#include <string>
+# include <iostream>
+# include <iomanip>
 
-class replace
+class Harl
 {
 public:
 
-	replace( std::string infile );
-	~replace();
+	Harl();
+	~Harl();
 
-	void	run_replace( std::string tofind, std::string toswap );
-
-	const std::string	getinfile() const;
-	const std::string	getoutfile() const;
+	void	complain( std::string level );
 
 private:
 
-	std::string	_infile;
-	std::string	_outfile;
+	void	info();
+	void	error();
+	void	debug();
+	void	warning();
 
 };
+
+typedef	void( Harl::*t_fun )( void );
 
 #endif

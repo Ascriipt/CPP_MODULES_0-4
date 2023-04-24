@@ -5,24 +5,18 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/21 13:53:30 by maparigi          #+#    #+#             */
-/*   Updated: 2023/04/24 16:11:48 by maparigi         ###   ########.fr       */
+/*   Created: 2022/07/20 11:40:04 by ael-khni          #+#    #+#             */
+/*   Updated: 2023/04/24 17:03:36 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "replace.hpp"
-#include <iostream>
-#include <iomanip>
-#include <fstream>
-#include <string>
+#include "Harl.hpp"
 
-int	main( int ac, char **av ) {
-	if (ac != 4)
-	{
-		std::cerr << "usage: ./replace <filename> <to_find> <replace>." << std::endl;
+int main( int ac, char **av ) {
+	Harl	inst;
+
+	if (ac != 2)
 		return 1;
-	}
-	replace	inst(av[1]);
-	inst.run_replace(av[2], av[3]);
+	inst.complain(av[1]);
 	return 0;
 }

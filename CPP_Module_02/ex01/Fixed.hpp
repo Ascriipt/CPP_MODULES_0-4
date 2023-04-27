@@ -6,14 +6,14 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 13:20:57 by maparigi          #+#    #+#             */
-/*   Updated: 2023/04/27 18:08:59 by maparigi         ###   ########.fr       */
+/*   Updated: 2023/04/27 20:03:05 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FIXED_HPP
-#define FIXED_HPP
+# define FIXED_HPP
 
-#include <iostream>
+# include <iostream>
 
 class Fixed
 {

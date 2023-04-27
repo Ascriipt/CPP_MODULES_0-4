@@ -1,37 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/04/27 13:20:57 by maparigi          #+#    #+#             */
-/*   Updated: 2023/04/27 20:03:13 by maparigi         ###   ########.fr       */
+/*   Created: 2023/04/27 17:50:32 by maparigi          #+#    #+#             */
+/*   Updated: 2023/04/27 20:43:44 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-# define FIXED_HPP
-
-# include <iostream>
-
-class Fixed
-{
-public:
-
-    Fixed();
-    Fixed( const Fixed &neu );
-    Fixed& operator=( const Fixed &neu );
-    ~Fixed();
-
-    int     getRawBits( void ) const;
-    void    setRawBits( int const raw );
-
-private:
-
-    int                 _fixedPointInteger;
-    static const int    _fractionalBits = 8;
-
-};
-
-#endif  // FIXED_HPP
+#include "Fixed.hpp"
+int main( void ) {
+Fixed a;
+Fixed const b( Fixed( 5.05f ) * Fixed( 2 ) );
+std::cout << a << std::endl;
+std::cout << ++a << std::endl;
+std::cout << ++a << std::endl;
+std::cout << a++ << std::endl;
+std::cout << a << std::endl;
+std::cout << b << std::endl;
+return 0;
+}

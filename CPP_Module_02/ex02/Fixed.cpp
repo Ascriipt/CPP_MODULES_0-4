@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 13:20:44 by maparigi          #+#    #+#             */
-/*   Updated: 2023/04/27 20:43:15 by maparigi         ###   ########.fr       */
+/*   Updated: 2023/04/27 21:35:05 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -100,6 +100,30 @@ bool Fixed::operator!=( const Fixed &neu ) const {
 std::ostream& operator<<( std::ostream& os, Fixed const& to_print ) {
     os << to_print.toFloat();
     return os;
+}
+
+Fixed& Fixed::min( Fixed &x, Fixed &y ) {
+    if ( x.getRawBits() < y.getRawBits() )
+        return x;
+    return y;
+}
+
+Fixed& Fixed::max( Fixed &x, Fixed &y ) {
+    if ( x.getRawBits() > y.getRawBits() )
+        return x;
+    return y;
+}
+
+const Fixed& Fixed::min( const Fixed &x, const Fixed &y ) {
+    if ( x.getRawBits() < y.getRawBits() )
+        return x;
+    return y;
+}
+
+const Fixed& Fixed::max( const Fixed &x, const Fixed &y ) {
+    if ( x.getRawBits() > y.getRawBits() )
+        return x;
+    return y;
 }
 
 float Fixed::toFloat( void ) const {

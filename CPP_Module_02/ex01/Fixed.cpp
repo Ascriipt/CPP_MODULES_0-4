@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 13:20:44 by maparigi          #+#    #+#             */
-/*   Updated: 2023/04/27 18:19:50 by maparigi         ###   ########.fr       */
+/*   Updated: 2023/04/28 15:53:07 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ Fixed::Fixed( const int nb ) : _fixedPointInteger( nb << _fractionalBits ) {
 	std::cout << "Int constructor called" << std::endl;
 }
 
-Fixed::Fixed( const float nb) : _fixedPointInteger(std::roundf(nb * (1 << _fractionalBits))) {
+Fixed::Fixed( const float nb) : _fixedPointInteger(roundf(nb * (1 << _fractionalBits))) {
 	std::cout << "Float constructor called" << std::endl;
 }
 

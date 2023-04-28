@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/27 13:20:44 by maparigi          #+#    #+#             */
-/*   Updated: 2023/04/27 21:35:05 by maparigi         ###   ########.fr       */
+/*   Updated: 2023/04/28 15:54:55 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ Fixed::Fixed( void ) : _fixedPointInteger(0) {
 Fixed::Fixed( const int nb ) : _fixedPointInteger( nb << _fractionalBits ) {
 }
 
-Fixed::Fixed( const float nb) : _fixedPointInteger(std::roundf(nb * (1 << _fractionalBits))) {
+Fixed::Fixed( const float nb) : _fixedPointInteger(roundf(nb * (1 << _fractionalBits))) {
 }
 
 Fixed::~Fixed() {

@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 20:04:49 by maparigi          #+#    #+#             */
-/*   Updated: 2023/04/29 22:38:51 by maparigi         ###   ########.fr       */
+/*   Updated: 2023/04/29 23:12:13 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,8 @@ public :
 	void	takeDamage( unsigned int amount );
 	void	beRepaired( unsigned int amount );
 	void	attack( const std::string& target );
+
+	int		getHitPoints( void ) const;
 
 protected :
 

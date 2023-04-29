@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 20:15:06 by maparigi          #+#    #+#             */
-/*   Updated: 2023/04/29 22:38:56 by maparigi         ###   ########.fr       */
+/*   Updated: 2023/04/29 23:13:04 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 /*****************************Constructor, *********************************/
 
-ClapTrap::ClapTrap() : _Name("Player"), _Hit_points(100), _Energy_points(50), _Attack_damage(20) {
+ClapTrap::ClapTrap() : _Name("Player"), _Hit_points(10), _Energy_points(10), _Attack_damage(0) {
 	std::cout << "ClapTrap default Constructor Called" << std::endl;
 }
 
-ClapTrap::ClapTrap( std::string name ) : _Name(name), _Hit_points(100), _Energy_points(50), _Attack_damage(20) {
+ClapTrap::ClapTrap( std::string name ) : _Name(name), _Hit_points(10), _Energy_points(10), _Attack_damage(0) {
 	std::cout << "ClapTrap Constructor Called" << std::endl;
 }
 
@@ -40,6 +40,10 @@ ClapTrap::~ClapTrap( void ) {
 }
 
 /*********************************************************************************/
+
+int		ClapTrap::getHitPoints( void ) const {
+	return _Hit_points;
+}
 
 void	ClapTrap::takeDamage( unsigned int amount ) {
 	std::cout << "OOF ! " << this->_Name << " is dealt " << amount << " damage(s)!" << std::endl;

@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 21:55:10 by maparigi          #+#    #+#             */
-/*   Updated: 2023/04/29 22:52:19 by maparigi         ###   ########.fr       */
+/*   Updated: 2023/04/29 22:59:34 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,11 +27,6 @@ public :
 	ScavTrap&	operator=( const ScavTrap &neu );
 
 	void	guardGate();
-
-private :
-
-
-
 };
 
 #endif

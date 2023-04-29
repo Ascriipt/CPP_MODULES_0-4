@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 20:57:04 by maparigi          #+#    #+#             */
-/*   Updated: 2023/04/30 00:02:00 by maparigi         ###   ########.fr       */
+/*   Updated: 2023/04/30 00:29:56 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int	main()
 	std::cout << test.getHitPoints() << " " << player.getHitPoints() << " " << other.getHitPoints() << std::endl;
 	player.guardGate();
 	other.guardGate();
+	player.attack( "Meryem" );
 	player.takeDamage(101);
 	player.beRepaired(10);
 	std::cout << test.getHitPoints() << " " << player.getHitPoints() << " " << other.getHitPoints() << std::endl;

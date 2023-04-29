@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 20:15:06 by maparigi          #+#    #+#             */
-/*   Updated: 2023/04/28 21:15:41 by maparigi         ###   ########.fr       */
+/*   Updated: 2023/04/29 23:59:29 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,16 @@
 
 /*****************************Constructor, *********************************/
 
+ClapTrap::ClapTrap() : _Name("Player"), _Hit_points(10), _Energy_points(10), _Attack_damage(0) {
+	std::cout << "[ClapTrap] default Constructor Called for : " << _Name << std::endl;
+}
+
 ClapTrap::ClapTrap( std::string name ) : _Name(name), _Hit_points(10), _Energy_points(10), _Attack_damage(0) {
-	std::cout << "Default Constructor Called" << std::endl;
+	std::cout << "[ClapTrap] Constructor Called for : " << _Name << std::endl;
 }
 
 ClapTrap&	ClapTrap::operator=( const ClapTrap &neu ) {
+	std::cout << "[ClapTrap] assignment operator called" << std::endl;
 	_Name = neu._Name;
 	_Hit_points = neu._Hit_points;
 	_Energy_points = neu._Energy_points;
@@ -27,15 +32,19 @@ ClapTrap&	ClapTrap::operator=( const ClapTrap &neu ) {
 }
 
 ClapTrap::ClapTrap( const ClapTrap& neu ) {
-	std::cout << "Copy Constructor Called" << std::endl;
+	std::cout << "[ClapTrap] copy Constructor Called" << std::endl;
 	(*this) = neu;
 }
 
 ClapTrap::~ClapTrap( void ) {
-	std::cout << "Default Destructor Called" << std::endl;
+	std::cout << "[ClapTrap] Destructor Called for : " << _Name << std::endl;
 }
 
 /*********************************************************************************/
+
+int		ClapTrap::getHitPoints( void ) const {
+	return _Hit_points;
+}
 
 void	ClapTrap::takeDamage( unsigned int amount ) {
 	std::cout << "OOF ! " << this->_Name << " is dealt " << amount << " damage(s)!" << std::endl;
@@ -53,5 +62,5 @@ void	ClapTrap::beRepaired( unsigned int amount ) {
 }
 
 void	ClapTrap::attack( const std::string& target ) {
-	std::cout << "ClapTrap " << _Name << " attacks " << target << " dealing " << this->_Attack_damage << " damage(s)!" << std::endl;
+	std::cout << "[ClapTrap] " << _Name << " attacks " << target << " dealing " << this->_Attack_damage << " damage(s)!" << std::endl;
 }

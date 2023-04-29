@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/29 21:55:38 by maparigi          #+#    #+#             */
-/*   Updated: 2023/04/30 00:27:53 by maparigi         ###   ########.fr       */
+/*   Updated: 2023/04/30 00:35:52 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ ScavTrap::~ScavTrap() {
 }
 
 void	ScavTrap::guardGate() {
-	std::cout << "(ScavTrap) : " << this->_Name << " has entered Gate keeper mode" << std::endl;
+	std::cout << "ScavTrap : " << this->_Name << " has entered Gate keeper mode" << std::endl;
 }
 
 void	ScavTrap::attack( const std::string& target ) {

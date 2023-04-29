@@ -6,7 +6,7 @@
 #    By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/07 18:52:45 by maparigi          #+#    #+#              #
-#    Updated: 2023/04/28 20:04:18 by maparigi         ###   ########.fr        #
+#    Updated: 2023/04/30 00:19:27 by maparigi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,12 +25,14 @@ Blink=\033[5m
 Bold=\033[1m
 #---------------------------#
 
-NAME = ClapTrap
+NAME = FragTrap
 
 CC = c++
 
 SRC =	main.cpp \
 		ClapTrap.cpp \
+		ScavTrap.cpp \
+		FragTrap.cpp \
 
 OBJ = ${SRC:.cpp=.o}
 DEPS = ${SRC:.cpp=.d}

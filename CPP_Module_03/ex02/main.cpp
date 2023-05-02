@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 20:57:04 by maparigi          #+#    #+#             */
-/*   Updated: 2023/04/30 00:37:22 by maparigi         ###   ########.fr       */
+/*   Updated: 2023/05/02 21:40:30 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,28 +15,60 @@
 
 int	main()
 {
-	ScavTrap player("Matteo");
-	FragTrap tset("Nat");
-	std::cout << tset.getHitPoints() << " " << player.getHitPoints() << " " << std::endl;
-	player.guardGate();
-	tset.highFivesGuys();
-	player.takeDamage(101);
-	tset.takeDamage(101);
-	player.beRepaired(10);
-	tset.beRepaired(10);
-	player.attack("Dnai");
-	tset.attack("Dnai");
-	std::cout << tset.getHitPoints() << " " << player.getHitPoints() << " " << std::endl;
-	return 0;
+		std::cout << "### TESTING CLAPTRAP ###\n" << std::endl;
+	{
+		std::cout << "\033[34mConstructing\033[0m" << std::endl;
+		ClapTrap a;
+		ClapTrap b("Cody");
+
+		std::cout << "\033[34mTesting\033[0m" << std::endl;
+		a.attack("some other robot");
+		a.takeDamage(10);
+		a.takeDamage(10);
+		a.beRepaired(5);
+		a.attack("some other other robot");
+		b.beRepaired(3);
+		for (int i = 0; i < 12; i++)
+			b.attack("Cody-clone");
+		b.beRepaired(3);
+		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+	}
+	std::cout << "\n\n### TESTING SCAVTRAP ###\n" << std::endl;
+	{
+		std::cout << "\033[34mConstructing\033[0m" << std::endl;
+		ScavTrap c;
+		ScavTrap d("Savage");
+
+		std::cout << "\033[34mTesting\033[0m" << std::endl;
+		c.attack("CloneTrap");
+		// for (int i = 0; i < 50; i++)
+		// 	c.attack("CloneTrap");
+		c.beRepaired(22);
+		c.takeDamage(21);
+		c.beRepaired(22);
+		c.guardGate();
+		c.guardGate();
+		d.attack("Savage-clone");
+		d.takeDamage(101);
+		d.takeDamage(15);
+		d.attack("ScavTrap-clone");
+		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+	}
+	std::cout << "\n\n### TESTING FRAGTRAP ###\n" << std::endl;
+	{
+		std::cout << "\033[34mConstructing\033[0m" << std::endl;
+		FragTrap e;
+		FragTrap f("Chadd");
+
+		std::cout << "\033[34mTesting\033[0m" << std::endl;
+		e.highFivesGuys();
+		e.attack("some random dude");
+		e.takeDamage(101);
+		e.takeDamage(1);
+		e.attack("some random dude");
+		f.highFivesGuys();
+		// for(int i = 0; i < 101; i++)
+		// 	f.attack("FragTrap-clone");
+		std::cout << "\033[34mDeconstructing\033[0m" << std::endl;
+	}
 }
-//{
-//    ScavTrap ash( "Ash" );
-//    ScavTrap ash2( ash );
-
-//    ash.attack( "the air" );
-//    ash.takeDamage( 10 );
-//    ash.beRepaired( 10 );
-//    ash.guardGate();
-
-//    return 1;
-//}

@@ -6,7 +6,7 @@
 #    By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/07 18:52:45 by maparigi          #+#    #+#              #
-#    Updated: 2023/05/02 21:58:59 by maparigi         ###   ########.fr        #
+#    Updated: 2023/05/02 22:01:57 by maparigi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ Blink=\033[5m
 Bold=\033[1m
 #---------------------------#
 
-NAME = FragTrap
+NAME = DiamondTrap
 
 CC = c++
 
@@ -33,11 +33,12 @@ SRC =	main.cpp \
 		ClapTrap.cpp \
 		ScavTrap.cpp \
 		FragTrap.cpp \
+		DiamondTrap.cpp \
 
 OBJ = ${SRC:.cpp=.o}
 DEPS = ${SRC:.cpp=.d}
 
-CPPFLAGS = -Wall -Wextra -Werror #-std=c++98
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow
 
 .cpp.o:
 	${CC} ${CPPFLAGS} -c $< -o ${<:.cpp=.o}

@@ -6,11 +6,11 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/28 20:57:04 by maparigi          #+#    #+#             */
-/*   Updated: 2023/05/02 22:06:29 by maparigi         ###   ########.fr       */
+/*   Updated: 2023/05/02 22:05:52 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ScavTrap.hpp"
+#include "DiamondTrap.hpp"
 
 int	main()
 {
@@ -51,15 +51,35 @@ int	main()
 		b.attack("ScavTrap-clone");
 		std::cout << "\033[35mDeconstructing\033[0m" << std::endl;
 	}
+	std::cout << "\n\n### TESTING FRAGTRAP ###\n" << std::endl;
+	{
+		std::cout << "\033[35mConstructing\033[0m" << std::endl;
+		FragTrap a;
+		FragTrap b("Chadd");
+
+		std::cout << "\033[35mTesting\033[0m" << std::endl;
+		a.highFivesGuys();
+		a.attack("some random dude");
+		a.takeDamage(101);
+		a.takeDamage(1);
+		a.attack("some random dude");
+		b.highFivesGuys();
+		std::cout << "\033[35mDeconstructing\033[0m" << std::endl;
+	}
+	std::cout << "\n\n### TESTING DIAMONDTRAP ###\n" << std::endl;
+	{
+		std::cout << "\033[35mConstructing\033[0m" << std::endl;
+		DiamondTrap a;
+		DiamondTrap b("Giga Chadd");
+		DiamondTrap c(a);
+
+		std::cout << "\033[35mTesting\033[0m" << std::endl;
+		a.whoAmI();
+		a.attack("some super random dude");
+		b.whoAmI();
+		b.attack("Chadd-clone");
+		c.whoAmI();
+		std::cout << "\033[35mDeconstructing\033[0m" << std::endl;
+	}
+	return (0);
 }
-//{
-//    ScavTrap ash( "Ash" );
-//    ScavTrap ash2( ash );
-
-//    ash.attack( "the air" );
-//    ash.takeDamage( 10 );
-//    ash.beRepaired( 10 );
-//    ash.guardGate();
-
-//    return 1;
-//}

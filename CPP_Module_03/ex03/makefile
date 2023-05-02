@@ -6,7 +6,7 @@
 #    By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/07 18:52:45 by maparigi          #+#    #+#              #
-#    Updated: 2023/05/02 22:01:57 by maparigi         ###   ########.fr        #
+#    Updated: 2023/05/02 23:27:32 by maparigi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,7 +38,7 @@ SRC =	main.cpp \
 OBJ = ${SRC:.cpp=.o}
 DEPS = ${SRC:.cpp=.d}
 
-CPPFLAGS = -Wall -Wextra -Werror -std=c++98 -Wshadow
+CPPFLAGS = -Wall -Wextra -Werror -std=c++98 #-Wshadow
 
 .cpp.o:
 	${CC} ${CPPFLAGS} -c $< -o ${<:.cpp=.o}

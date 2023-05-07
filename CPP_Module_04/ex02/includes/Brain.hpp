@@ -1,38 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/03 18:58:42 by maparigi          #+#    #+#             */
-/*   Updated: 2023/05/07 19:20:40 by maparigi         ###   ########.fr       */
+/*   Created: 2023/05/07 18:45:40 by maparigi          #+#    #+#             */
+/*   Updated: 2023/05/07 18:50:04 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-# include "Animal.hpp"
-# include "Brain.hpp"
-class Cat : public Animal
+# include <iostream>
+# include <string>
+
+class Brain
 {
 private:
 
-	Brain		*_brain;
+	std::string _ideas[100];
 
 public:
 
-	Cat();
-	Cat( std::string type );
-	Cat( const Cat &old );
-	~Cat();
+	Brain();
+	Brain(const Brain &copy);
 
-	Cat&	operator=( const Cat &old );
+	virtual ~Brain();
 
-	void		makeSound( void ) const;
-	void		showBrain( void ) const;
-	void		setIdea( size_t i, std::string idea );
+	Brain &operator=(const Brain &src);
+
+	const std::string getIdea(size_t i)const;
+	const std::string *getIdeaAddress(size_t i)const;
+
+	void setIdea(size_t i, std::string idea);
 
 };
 

@@ -6,7 +6,7 @@
 #    By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/04/07 18:52:45 by maparigi          #+#    #+#              #
-#    Updated: 2023/05/04 18:59:59 by maparigi         ###   ########.fr        #
+#    Updated: 2023/05/07 19:21:44 by maparigi         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRC =	./srcs/main.cpp \
 		./srcs/Cat.cpp \
 		./srcs/WrongAnimal.cpp \
 		./srcs/WrongCat.cpp	\
+		./srcs/Brain.cpp \
 
 OBJ = ${SRC:.cpp=.o}
 DEPS = ${SRC:.cpp=.d}

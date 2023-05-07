@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 15:31:44 by maparigi          #+#    #+#             */
-/*   Updated: 2023/05/04 19:13:41 by maparigi         ###   ########.fr       */
+/*   Updated: 2023/05/07 20:44:26 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,14 @@
 
 # include <iostream>
 # include <string>
+# include <cstdio>
+# include <cstdlib>
 
 class Animal
 {
 protected:
 
-	std::string	_type;
+std::string	_type;
 
 public:
 

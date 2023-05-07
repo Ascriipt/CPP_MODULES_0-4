@@ -6,31 +6,73 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/04 18:20:19 by maparigi          #+#    #+#             */
-/*   Updated: 2023/05/04 19:51:40 by maparigi         ###   ########.fr       */
+/*   Updated: 2023/05/07 19:34:32 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Dog.hpp"
+#include "Animal.hpp"
 #include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongAnimal.hpp"
 #include "WrongCat.hpp"
-
-#define N_ANIMALS 10
+#include "Brain.hpp"
 
 int main()
 {
-const Animal *tab[N_ANIMALS];
-const Animal* j = new Dog();
-const Animal* i = new Cat();
-for (int i = 0; i < N_ANIMALS; i++)
-{
-	if (i < N_ANIMALS / 2)
-		tab[i] = new Dog();
-	else
-		tab[i] = new Cat();
-}
-delete j;//should not create a leak
-delete i;
-for (int i = 0; i < N_ANIMALS; i++)
-	delete tab[i];
-return 0;
+	std::cout << "\033[35mConstructing\033[0m" << std::endl;
+	const Animal	*meta[10];
+	for (int i = 0; i < 10; i++)
+	{
+		if (i % 2) {
+			meta[i] = new Cat();
+			if (meta[i] == NULL)
+				exit(1);
+		}
+		else {
+			meta[i] = new Dog();
+			if (meta[i] == NULL)
+				exit (1);
+		}
+	}
+	std::cout << std::endl;
+	std::cout << "\033[35mTesting\033[0m" << std::endl;
+	for (int i = 0; i < 10; i++)
+	{
+		std::cout << "_type: " << meta[i]->getType() << std::endl;
+		meta[i]->makeSound();
+		std::cout << std::endl;
+	}
+	std::cout << std::endl;
+	std::cout << "\033[35mDestroying\033[0m" << std::endl;
+	for (int i = 0; i < 10; i++)
+		delete(meta[i]);
+	std::cout << std::endl;
+	std::cout << "\033[31m----------------Deep-Copy----------------" << std::endl;
+	std::cout << "\033[35mConstructing\033[0m" << std::endl;
+	Dog *a = new Dog();
+	if (a == NULL)
+		exit(1);
+	a->setIdea(0, "ueeeee");
+	a->setIdea(1, "naaaaaan");
+	a->setIdea(2, "prout");
+	a->setIdea(101, "test");
+	Dog *b = new Dog(*a);
+	if (b == NULL)
+		exit(1);
+	std::cout << std::endl;
+	std::cout << "\033[35mTesting a\033[0m" << std::endl;
+	std::cout << "The " << a->getType() << " a has the following ideas: " << std::endl;
+	a->showBrain();
+	std::cout << std::endl;
+	std::cout << "\033[35mDestroying a\033[0m" << std::endl;
+	delete(a);
+	std::cout << std::endl;
+	std::cout << "\033[35mTesting b\033[0m" << std::endl;
+	std::cout << "The " << b->getType() << " b has the following ideas: " << std::endl;
+	b->showBrain();
+	std::cout << std::endl;
+	std::cout << "\033[35mDestroying b\033[0m" << std::endl;
+	delete(b);
+
+	return (0);
 }

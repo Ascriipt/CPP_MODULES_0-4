@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/05/04 19:21:05 by maparigi          #+#    #+#             */
-/*   Updated: 2023/05/04 19:34:24 by maparigi         ###   ########.fr       */
+/*   Created: 2023/05/07 18:45:40 by maparigi          #+#    #+#             */
+/*   Updated: 2023/05/07 18:50:04 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,21 +16,26 @@
 # include <iostream>
 # include <string>
 
-class Brain {
-	
-	public:
-	
-		Brain(void);
-		Brain( std::string ideas[100] );
-		Brain( Brain const &old );
-		~Brain(void);
+class Brain
+{
+private:
 
-		Brain&	operator=( Brain const &old );
-	
-	private:
-	
-		std::string _ideas[100];
-	
+	std::string _ideas[100];
+
+public:
+
+	Brain();
+	Brain(const Brain &copy);
+
+	virtual ~Brain();
+
+	Brain &operator=(const Brain &src);
+
+	const std::string getIdea(size_t i)const;
+	const std::string *getIdeaAddress(size_t i)const;
+
+	void setIdea(size_t i, std::string idea);
+
 };
 
 #endif

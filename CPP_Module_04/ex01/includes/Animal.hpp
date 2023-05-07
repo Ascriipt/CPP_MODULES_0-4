@@ -6,7 +6,7 @@
 /*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/05/03 15:31:44 by maparigi          #+#    #+#             */
-/*   Updated: 2023/05/04 19:35:50 by maparigi         ###   ########.fr       */
+/*   Updated: 2023/05/07 19:13:44 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 # include <iostream>
 # include <string>
-# include "Brain.hpp"
+# include <cstdio>
+# include <cstdlib>
 
 class Animal
 {

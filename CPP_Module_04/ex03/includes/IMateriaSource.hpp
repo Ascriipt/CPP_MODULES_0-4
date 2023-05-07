@@ -3,25 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/25 15:10:26 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/25 16:06:50 by ael-khni         ###   ########.fr       */
+/*   Created: 2023/05/07 20:53:37 by maparigi          #+#    #+#             */
+/*   Updated: 2023/05/07 21:44:37 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef IMATERIASOURCE_HPP
-#define IMATERIASOURCE_HPP
+# define IMATERIASOURCE_HPP
 
-#include "AMateria.hpp"
+# include "AMateria.hpp"
 
 class IMateriaSource
 {
-
 public:
-    virtual ~IMateriaSource() {}
-    virtual void learnMateria(AMateria*) = 0;
-    virtual AMateria* createMateria(std::string const & type) = 0;
+	virtual ~IMateriaSource() {}
+	virtual void learnMateria(AMateria*) = 0;
+	virtual AMateria* createMateria( std::string const &type ) = 0;
 };
 
-#endif // IMATERIASOURCE_HPP
+#endif

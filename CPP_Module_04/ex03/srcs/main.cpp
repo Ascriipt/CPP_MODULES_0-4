@@ -3,14 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/25 15:12:43 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/25 16:50:14 by ael-khni         ###   ########.fr       */
+/*   Created: 2023/05/04 18:20:19 by maparigi          #+#    #+#             */
+/*   Updated: 2023/05/07 22:01:32 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
+#include "Animal.hpp"
+#include "Cat.hpp"
+#include "Dog.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
+#include "Brain.hpp"
 #include "Character.hpp"
 #include "ICharacter.hpp"
 #include "IMateriaSource.hpp"
@@ -20,6 +25,11 @@
 
 int main()
 {
+	std::cout << "\033[35m---------------------" << std::endl;
+	std::cout << "----- EX03-TEST -----" << std::endl;
+	std::cout << "---------------------\033[0m" << std::endl;
+	std::cout << std::endl;
+
     IMateriaSource* src = new MateriaSource();
     src->learnMateria(new Ice());
     src->learnMateria(new Cure());
@@ -36,6 +46,13 @@ int main()
 
     me->use(0, *bob);
     me->use(1, *bob);
+	me->use(5, *bob);
+
+	me->unequip(0);
+	me->unequip(1);
+
+	me->use(0, *bob);
+	me->use(1, *bob);
 
     delete bob;
     delete me;

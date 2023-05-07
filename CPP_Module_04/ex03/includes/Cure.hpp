@@ -3,29 +3,32 @@
 /*                                                        :::      ::::::::   */
 /*   Cure.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ael-khni <ael-khni@student.1337.ma>        +#+  +:+       +#+        */
+/*   By: maparigi <maparigi@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/25 15:03:30 by ael-khni          #+#    #+#             */
-/*   Updated: 2022/07/25 16:45:09 by ael-khni         ###   ########.fr       */
+/*   Created: 2023/05/07 20:53:02 by maparigi          #+#    #+#             */
+/*   Updated: 2023/05/07 21:48:42 by maparigi         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CURE_HPP
-#define CURE_HPP
+# define CURE_HPP
 
-#include "AMateria.hpp"
+# include "AMateria.hpp"
 
 class Cure : public AMateria
 {
-    public:
-        Cure();
-        ~Cure();
+public:
 
-        Cure( Cure const & );
-        Cure& operator=( Cure const & );
+	Cure();
+	~Cure();
 
-        virtual AMateria*   clone() const;
-        virtual void        use(ICharacter& target);
+	Cure( Cure const & );
+	Cure& operator=( Cure const & );
+	
+	virtual AMateria*	clone() const;
+
+	virtual void		use( ICharacter &target );
+
 };
 
-#endif // CURE_HPP
+#endif
